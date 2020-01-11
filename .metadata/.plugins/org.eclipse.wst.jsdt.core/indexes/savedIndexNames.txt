@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\Documents\programação adeva 2019\projeto site\clinica\lourdes-clinica-psiquiatrica\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1755440074.index
+3655787803.index
+1820319181.index
+4196587242.index
+1554083294.index
+858692999.index

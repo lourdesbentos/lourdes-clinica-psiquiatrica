@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+<title>Clínica Psiquiatrica!</title>
+</head>
+<body>
+<h1>Clínica Psiquiatrica </h1>
+<p> Agende consultas, verifique os medicamentos, cadastre os pacientes e mantenha o histórico de consultas atualizado.  </p>
+<!--   -->comentário aqui para não utilizar esse comando nesta página <p id="s" aria-live="assertive"> </p -->
+
+<!--   <form>
+<div class="form-group">
+<label for="n1" > Digite um número </label>
+<input name="n1" id="n1" type="number" class="form-control" />
+</div>
+<label for="nip" > escolha o tipo de número </label> 
+<select name="nip" id="nip">
+<option value="1"> Impar </option>
+<option value="2"> Par </option>
+</select> 
+
+<button type="button" id="b" class="btn btn-primary"> Executar </button>
+</form> -->
+<!-- arquivos js importantes -->
+<script src="js/jquery-3.4.1.js" > </script>
+    <script src="js/bootstrap.bundle.min.js" > </script>
+        <script src="js/functions.js" > </script>
+        <script>
+        
+        </script>
+  </body>
+</html>
