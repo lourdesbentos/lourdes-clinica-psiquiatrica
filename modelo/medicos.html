@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/style.css" />
-<title>Clínica Psiquiatrica - Pacientes</title>
+<title>Clínica Psiquiatrica - Corpo Clínico </title>
 </head>
 <body>
 <header>
@@ -18,35 +18,47 @@
  <main>
  
 <h1>Clínica Psiquiatrica! Trabalhando Pela saúde da Mente! </h1>
-<p> O Cadastro de nossos pacientes deve estar sempre atualizado. No contato telefônico, certifique-se que ele não está cadastrado. </p> 
+<p> Nosso corpo clínico é composto por médicos com especialidades específicas. <br/> Psiquiatria Infantil, Psiquiatria adulto, e psiquiatria geriátrica.
+</p> 
 
-<p> Se  não localizar,  faça o cadastro corretamente, solicitando todos os dados. Entenda se ele não quiser fornecer todos para você. <br/>
-Se você localizar o cadastro, atualize  as informações de contato, como telefone e e-mail.  </p> <br/>
+<p> O ccadastro dos profissionais, está sendo atualizado constantemente e contém informações essenciais. 
+<br/>Se você considerar necessário,  atualize  as informações de contato, como telefone e e-mail nesta página. </p>
  
 <form role="search">
    <div class="form-group">
-<label for="p">pesquisa</label>
-<input type="search" name="p" id="p" >
+<label for="c">CRM</label>
+<input type="search" name="c" id="c" >
 </div>
 <button type="submit" class="btn btn-primary">buscar</button>
 </form>
 
 
  <form>
+ <div class="form-group">
+<label for="n6" > CRM </label>
+<input name="n6" id="n6" type="number" required  class="form-control" />
+</div>
+ 
 <div class="form-group">
 <label for="n1" > Nome</label>
-<input name="n1" id="n1" type="name" required  class="form-control" />
+<input name="n1" id="n1" type="text" required  class="form-control" />
+</div>
+
+<div class="form-group">
+<label for="esp" > Especialidade</label> 
+<select name="esp" id="esp">
+<option value="1"> Psiquiatria </option>
+<option value="2"> Psiquiatria Infantil< /option>
+<option value="3"> Psiquiatria Geriátrica </option>
+</select> 
 </div>
 <div class="form-group">
 <label for="n2" > CPF </label>
-<input name="n2" id="n2" type="number" class="form-control" />
+<input name="n2" id="n2" type="number" required  class="form-control" />
 </div>
+
 <div class="form-group">
-<label for="n3" > Data de Nascimento </label>
-<input name="n3" id="n3" type="date" class="form-control" />
-</div>
-<div class="form-group">
-<label for="n4" > Telefone com ddd </label>
+<label for="n4" > Telefone com ddd		 </label>
 <input name="n4" id="n4" type="tel" class="form-control" />
 </div>
 <div class="form-group">

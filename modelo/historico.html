@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+<title>Clínica Psiquiatrica - Histórico de Consultas </title>
+</head>
+<body>
+<header>
+<h1> Clínica Psiquiátrica! </h1>
+									<nav>
+<a href="index.html" >Home </a>
+ </nav> 
+ </header>
+ <main>
+ 
+<h1>Clínica Psiquiatrica! Trabalhando Pela saúde da Mente! </h1>
+<p> Registro do histórico de atendimento do paciente:<br/> O médico relata informações importantes, resultados de exames, indicações / encaminhamentos. Podendo, inclusive, solicitar medicamentos ao setor de farmácia.
+</p> 
+
+<p> Lembre-se que este histórico será cessado por todo o corpo clínico, então, procure ser claro e objetivo no relato de suas observações / orientações / solicitações. 
+<br/></p>
+ 
+<form role="search">
+   <div class="form-group">
+<label for="n">Nome do Médico </label>
+<input type="search" name="n" id="n" >
+</div>
+<div class="form-group">
+<label for="esp" > Especialidade</label> 
+<select name="esp" id="esp">
+<option value="1"> Psiquiatria </option>
+<option value="2"> Psiquiatria Infantil </option>
+<option value="3"> Psiquiatria Geriátrica </option>
+</select> 
+</div>
+
+<div class="form-group">
+<label for="n5" > Nome do Paciente </label>
+<input name="n5" id="n5" type="text" class="form-control" />
+</div>
+
+<button type="submit" class="btn btn-primary">buscar</button>
+</form>
+
+
+ <form>
+ <div class="form-group">
+<label for="n6" > Data </label>
+<input name="n6" id="n6" type="date" required  class="form-control" />
+</div>
+ 
+<div class="form-group">
+<label for="n1" > Nome do Médico </label>
+<input name="n1" id="n1" type="text" required  class="form-control" />
+</div>
+
+<div class="form-group">
+<label for="espc" > Especialidade</label> 
+<select name="espc" id="espc">
+<option  value="1"> Psiquiatria </option>
+<option value="2"> Psiquiatria Infantil </option>
+<option value="3"> Psiquiatria Geriátrica </option>
+</select> 
+</div>
+
+<div class="form-group">
+<label for="n4" > Nome do paciente </label>
+<input name="n4" id="n4" type="text" class="form-control" />
+</div>
+<div class="form-group">
+<label for="n2" > Comentário </label>
+<input name="n2" id="n2" type="textarea" required  class="form-control" />
+</div>
+
+<div class="form-group">
+<label for="med" > Solicitar medicamentos </label> 
+<select name="med" id="med">
+<option value="1"> sim</option>
+<option value="2"> não </option>
+</select> 
+</div>
+<div class="form-group">
+<label for="n8" > Medicamentos da farmácia </label> 
+<select name="n8" id="n8">
+<option value="1"> Fluoxetina </option>
+<option value="2"> Bupropiona  </option>
+</select> 
+</div>
+<div class="form-group">
+<label for="n9" > Dosagem </label> 
+<select name="n9" id="n9">
+<option value="1"> 10mg </option>
+<option value="2"> 20 mg </option>
+</select> 
+</div>
+<div class="form-group">
+<label for="n10" > Quantidade de caixas </label>
+<input name="n10" id="n10" type="number" class="form-control" />
+</div>
+<div class="form-group">
+<fieldset>
+ <legend> Status do pedido de medicamentos para a farmacia </legend>
+   <label for="sol" > Medicamento solicitado  </label>
+   <input type="checkbox"  id="sol" />
+   <label for="ent">  Medicamento Entregue </label>
+   <input type="checkbox"  id="ent"/>
+   
+</fieldset>	
+<button type="button" id="b" class="btn btn-primary"> Executar </button>
+ 
+</main>
+<footer> 2020! Todos os direitos reservados. </footer>
+<!--  comentário aqui para não utilizar esse comando nesta página <p id="s" aria-live="assertive"> </p -->
+
+<!-- arquivos js importantes -->
+<script src="js/jquery-3.4.1.js" > </script>
+    <script src="js/bootstrap.bundle.min.js" > </script>
+        <script src="js/functions.js" > </script>
+        <script>
+        
+        </script>
+  </body>
+</html>
