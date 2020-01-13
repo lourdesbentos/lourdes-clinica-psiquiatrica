@@ -17,7 +17,7 @@
  </header>
  <main>
  
-<h1>Clínica Psiquiatrica! Trabalhando Pela saúde da Mente! </h1>
+<h1>Clínica Psiquiatrica! Nosso histórico de consultas está aqui! </h1>
 <p> Registro do histórico de atendimento do paciente:<br/> O médico relata informações importantes, resultados de exames, indicações / encaminhamentos. Podendo, inclusive, solicitar medicamentos ao setor de farmácia.
 </p> 
 
@@ -55,7 +55,11 @@
  
 <div class="form-group">
 <label for="n1" > Nome do Médico </label>
-<input name="n1" id="n1" type="text" required  class="form-control" />
+<select name="n1" id="n1">
+<option  value="1"> José da Silva</option>
+<option value="2"> Maria da Silva </option>
+<option value="3"> Joana da Silva </option>
+</select> 
 </div>
 
 <div class="form-group">
@@ -68,13 +72,18 @@
 </div>
 
 <div class="form-group">
-<label for="n4" > Nome do paciente </label>
-<input name="n4" id="n4" type="text" class="form-control" />
+<label for="n4" > Nome do Paciente </label>
+<select name="n4" id="n4">
+<option  value="1"> Luciana Camargo </option>
+<option value="2"> Ricardo Oliveira </option>
+<option value="3"> Marta Soares </option>
+</select> 
+
 </div>
+
 <div class="form-group">
 <label for="n2" > Comentário </label>
-<input name="n2" id="n2" type="textarea" required  class="form-control" />
-</div>
+<textarea rows="5" cols="30"id="n2" Name="n2" > </textarea></div>
 
 <div class="form-group">
 <label for="med" > Solicitar medicamentos </label> 
@@ -83,37 +92,39 @@
 <option value="2"> não </option>
 </select> 
 </div>
-<div class="form-group">
-<label for="n8" > Medicamentos da farmácia </label> 
-<select name="n8" id="n8">
-<option value="1"> Fluoxetina </option>
-<option value="2"> Bupropiona  </option>
-</select> 
-</div>
-<div class="form-group">
-<label for="n9" > Dosagem </label> 
-<select name="n9" id="n9">
-<option value="1"> 10mg </option>
-<option value="2"> 20 mg </option>
-</select> 
-</div>
-<div class="form-group">
-<label for="n10" > Quantidade de caixas </label>
-<input name="n10" id="n10" type="number" class="form-control" />
-</div>
-<div class="form-group">
-<fieldset>
- <legend> Status do pedido de medicamentos para a farmacia </legend>
-   <label for="sol" > Medicamento solicitado  </label>
-   <input type="checkbox"  id="sol" />
-   <label for="ent">  Medicamento Entregue </label>
-   <input type="checkbox"  id="ent"/>
-   
-</fieldset>	
+<button type="button" id="o" class="btn btn-primary"> OK </button>
+<div  class="form-group">
+			<label for="n8" > Medicamentos da farmácia </label> 
+			<select name="n8" id="n8">
+			<option value="1"> Fluoxetina </option>
+			<option value="2"> Bupropiona  </option>
+			</select> 
+			</div>
+			<div class="form-group">
+			<label for="n9" > Dosagem </label> 
+			<select name="n9" id="n9">
+			<option value="1"> 10mg </option>
+			<option value="2"> 20 mg </option>
+			</select> 
+			</div>
+			<div class="form-group">
+			<label for="n10" > Quantidade de caixas </label>
+			<input name="n10" id="n10" type="number" class="form-control" />
+			</div>
+			<div class="form-group">
+			<fieldset>
+			 <legend> Status do pedido de medicamentos para a farmacia </legend>
+			   <label for="sol" > Medicamento solicitado  </label>
+			   <input type="checkbox"  id="sol" />
+			   <label for="ent">  Medicamento Entregue </label>
+			   <input type="checkbox"  id="ent"/>
+			   
+			</fieldset>
+			</div>
 <button type="button" id="b" class="btn btn-primary"> Executar </button>
- 
+ </form>
 </main>
-<footer> 2020! Todos os direitos reservados. </footer>
+<footer>Clínica Psiquiátrica! Trabalhando pela saúde da mente!  <br/> 2020! Todos os direitos reservados. </footer>
 <!--  comentário aqui para não utilizar esse comando nesta página <p id="s" aria-live="assertive"> </p -->
 
 <!-- arquivos js importantes -->
