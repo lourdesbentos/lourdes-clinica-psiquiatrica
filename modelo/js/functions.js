@@ -1,23 +1,23 @@
 ﻿function mostrarLink(){
-var resultado = "";
-var opcao = document.querySelector("#per");
+var resultadoLink = "";
+var opcaoLink = document.querySelector("#per");
 
-if(opcao.value == 1){
-resultado ='<a href="agendamentos.html" >Agendamento de consultas </a>'+'<a href="pacientes.html" >Nossos Pacientes   </a>';} else
- if(opcao.value == 2){
-  resultado = '<a href="medicos.html" >Corpo Clínico </a>' + '<a href="historico.html" > Histórico de consultas </a>';}
+if(opcaoLink.value == 1){
+resultadoLink ='<a href="agendamentos.php" >Agendamento de consultas </a>'+'<a href="pacientes.php" >Nossos Pacientes   </a>';} else
+ if(opcaoLink.value == 2){
+  resultadoLink = '<a href="medicos.php" >Corpo Clínico </a>' + '<a href="historico.php" > Histórico de consultas </a>';}
 else 
-{resultado = '<a href="medicamentos.html" > Farmácia </a>';}
-document.getElementById("l").innerHTML ="<nav>"+resultado+"</nav>";}
+{resultadoLink = '<a href="medicamentos.php" > Farmácia </a>';}
+document.getElementById("l").innerHTML ="<nav>"+resultadoLink+"</nav>";}
 document.querySelector("#b").addEventListener("click", ()=> {mostrarLink()
 });
 
-/*function mostrarCampos(){
-var resultado = "";
-var opcao = document.querySelector("#med");
+/*
+function mostrarCampos(){ var resultadoCampos = "";
+var opcaoCampos = document.querySelector("#med");
 
-	if(opcao.value == 1){
-		resultado ='<div  class="form-group">
+	if(opcaoCampos.value == 1){
+		resultadoCampos ='<div  class="form-group">
 			<label for="n8" > Medicamentos da farmácia </label> 
 			<select name="n8" id="n8">
 			<option value="1"> Fluoxetina </option>
@@ -45,7 +45,7 @@ var opcao = document.querySelector("#med");
 			   
 			</fieldset>
 			</div>';} else
-		  resultado = 'Medicamentos não foram solicitados!';}
+		  resultadoCampos = 'Medicamentos não foram solicitados!';}
 		document.getElementById("l").innerHTML ="<div>"+resultado+"</div>";}
 document.querySelector("#o").addEventListener("click", ()=> {mostrarCampos()
-});*/
+);});*/

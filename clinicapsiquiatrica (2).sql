@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Jan-2020 às 02:50
+-- Tempo de geração: 19-Jan-2020 às 21:52
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.1.33
 
@@ -81,7 +81,6 @@ INSERT INTO `historico` (`id`, `comentário`, `idmedicos`, `idpacientes`, `idmed
 CREATE TABLE `medicamentos` (
   `id` int(5) NOT NULL,
   `Nome` varchar(80) NOT NULL,
-  `dosagem` varchar(15) DEFAULT NULL,
   `quantidadedisponivel` int(5) DEFAULT NULL,
   `quantidadesolicitada` int(5) DEFAULT NULL,
   `status` enum('entregue','solicitado') DEFAULT NULL
@@ -91,9 +90,9 @@ CREATE TABLE `medicamentos` (
 -- Extraindo dados da tabela `medicamentos`
 --
 
-INSERT INTO `medicamentos` (`id`, `Nome`, `dosagem`, `quantidadedisponivel`, `quantidadesolicitada`, `status`) VALUES
-(1, 'gardenal', '200mg', 20, 5, NULL),
-(2, 'fluoxetina', '20mg', 10, 10, NULL);
+INSERT INTO `medicamentos` (`id`, `Nome`, `quantidadedisponivel`, `quantidadesolicitada`, `status`) VALUES
+(1, 'gardenal', 20, 5, NULL),
+(2, 'fluoxetina', 10, 10, NULL);
 
 -- --------------------------------------------------------
 

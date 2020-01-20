@@ -1,0 +1,54 @@
+no index, o que fazer?
+<?php 
+$cx = new mysqli ("localhost","root","","escola");
+$cursos= $cx->query ("select * from cursos order by nome");
+/*busca os dados no banco */
+while ($curso = $cursos->fetch_assoc()){
+echo "<li>$curso[nome] </li>";
+}
+?>
+</ul>
+<a href="cadastro_curso.php">Cadastre o Curso </a>
+<a href="cadastro_aluno.php">cadastro de alunos </a>
+  
+  </body>
+no cadastro de alunos
+<p>Informe abaixo os dados do aluno que será cadastrado. </p>
+<form action="curso-cadastro.php" method="post">
+<label for="aluno">Informe o nome do Aluno </label>
+<input type="text" name="aluno" id="aluno" required autocomplete autofocus/>
+<label for="mat">Selecione em qual curso está matriculado </label>
+<select name="mat" id="mat" required />
+<?php 
+$cx = new mysqli ("localhost","root","","escola");
+$cursos= $cx->query ("select * from cursos order by nome");
+/*busca os dados no banco */
+while ($curso = $cursos->fetch_assoc()){
+echo "<option value='$curso[id]'>$curso[nome] </option>";
+}
+
+?>
+</option>
+</select>
+<button type="submit" id="b" class="btn btn-primary">Executar </button>
+</form>
+  
+  </body>
+
+agora no cadastro de cursos
+<form action="curso-cadastro.php" method="post">
+<label for="curso">Informe o nome do Curso </label>
+<input type="text" name="curso" id="curso" required autocomplete autofocus/>
+<button type="submit" id="b" class="btn btn-primary">Executar </button>
+</form>
+  
+  </body>
+</html>
+gora no arquivo que tem as informações do banco 
+<?php 
+/*comando para logar no banco */
+$cx = new mysqli ("localhost","root","","escola");
+/*Método que irá chamar as querys */
+$cx->query("insert into cursos (nome) values('$_POST[curso]')");
+/*função para mandar uma metatag para o navegador */
+header("Location: index.php");

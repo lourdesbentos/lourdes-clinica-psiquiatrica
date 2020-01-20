@@ -12,42 +12,55 @@
 <header>
 <h1> Clínica Psiquiátrica! </h1>
 									<nav>
-<a href="index.html" >Home </a>
+<a href="index.php" >Home </a>
  </nav> 
  </header>
  <main>
  
 <h1>Clínica Psiquiatrica! Nosso histórico de consultas está aqui! </h1>
-<p> Registro do histórico de atendimento do paciente:<br/> O médico relata informações importantes, resultados de exames, indicações / encaminhamentos. Podendo, inclusive, solicitar medicamentos ao setor de farmácia.
+<p> Registro do histórico de atendimento do paciente:<br> O médico relata informações importantes, resultados de exames, indicações / encaminhamentos. Podendo, inclusive, solicitar medicamentos ao setor de farmácia.
 </p> 
 
 <p> Lembre-se que este histórico será cessado por todo o corpo clínico, então, procure ser claro e objetivo no relato de suas observações / orientações / solicitações. 
-<br/></p>
+<br></p>
  
-<form role="search">
+<form action="conectar-banco.php" method="post"   role="search">
    <div class="form-group">
 <label for="n">Nome do Médico </label>
-<input type="search" name="n" id="n" >
+<input type="search" name="nome" id="n" >
 </div>
 <div class="form-group">
 <label for="esp" > Especialidade</label> 
-<select name="esp" id="esp">
-<option value="1"> Psiquiatria </option>
-<option value="2"> Psiquiatria Infantil </option>
-<option value="3"> Psiquiatria Geriátrica </option>
+<select name="especialidade" id="esp">
+<?php 
+$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
+$especialidade = $cx->query ("select * from médicos order by especialidade");
+while ($especialidades = $especialidade->fetch_assoc()){
+    echo "<option value='$especialidades[id]'>$especialidades[especialidade] </option>";
+}
+?>    
 </select> 
 </div>
 
 <div class="form-group">
 <label for="n5" > Nome do Paciente </label>
-<input name="n5" id="n5" type="text" class="form-control" />
+<select name="nome" id="n5">
+<?php 
+$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
+$paciente= $cx->query ("select * from pacientes order by nome");
+while ($pacientes = $paciente->fetch_assoc()){
+    echo "<option value='$pacientes[id]'>$pacientes[nome] </option>";
+}
+?>    
+</select> 
+
 </div>
 
 <button type="submit" class="btn btn-primary">buscar</button>
 </form>
 
 
- <form>
+ <form action="conectar-banco.php" method="post"   >
  <div class="form-group">
 <label for="n6" > Data </label>
 <input name="n6" id="n6" type="date" required  class="form-control" />
@@ -55,28 +68,40 @@
  
 <div class="form-group">
 <label for="n1" > Nome do Médico </label>
-<select name="n1" id="n1">
-<option  value="1"> José da Silva</option>
-<option value="2"> Maria da Silva </option>
-<option value="3"> Joana da Silva </option>
+<select name="Nome" id="n1">
+<?php 
+$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
+$nome= $cx->query ("select * from médicos order by Nome");
+while ($medicos = $nome->fetch_assoc()){
+    echo "<option value='$medicos[id]'>$medicos[Nome] </option>";
+}
+?>    
 </select> 
 </div>
 
 <div class="form-group">
 <label for="espc" > Especialidade</label> 
-<select name="espc" id="espc">
-<option  value="1"> Psiquiatria </option>
-<option value="2"> Psiquiatria Infantil </option>
-<option value="3"> Psiquiatria Geriátrica </option>
+<select name="especialidade" id="espc">
+<?php 
+$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
+$especialidade = $cx->query ("select * from médicos order by especialidade");
+while ($especialidades = $especialidade->fetch_assoc()){
+    echo "<option value='$especialidades[id]'>$especialidades[especialidade] </option>";
+}
+?>    
 </select> 
 </div>
 
 <div class="form-group">
 <label for="n4" > Nome do Paciente </label>
-<select name="n4" id="n4">
-<option  value="1"> Luciana Camargo </option>
-<option value="2"> Ricardo Oliveira </option>
-<option value="3"> Marta Soares </option>
+<select name="nome" id="n4">
+<?php 
+$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
+$paciente= $cx->query ("select * from pacientes order by nome");
+while ($pacientes = $paciente->fetch_assoc()){
+    echo "<option value='$pacientes[id]'>$pacientes[nome] </option>";
+}
+?>    
 </select> 
 
 </div>
@@ -95,19 +120,17 @@
 <button type="button" id="o" class="btn btn-primary"> OK </button>
 <div  class="form-group">
 			<label for="n8" > Medicamentos da farmácia </label> 
-			<select name="n8" id="n8">
-			<option value="1"> Fluoxetina </option>
-			<option value="2"> Bupropiona  </option>
-			</select> 
+			<select name="nome" id="n8">
+			<?php 
+$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
+$medicamento = $cx->query ("select * from medicamentos order by Nome");
+while ($medicamentos = $medicamento->fetch_assoc()){
+    echo "<option value='$medicamentos[id]'>$medicamentos[Nome] </option>";
+}
+?>    
+</select> 
 			</div>
-			<div class="form-group">
-			<label for="n9" > Dosagem </label> 
-			<select name="n9" id="n9">
-			<option value="1"> 10mg </option>
-			<option value="2"> 20 mg </option>
-			</select> 
-			</div>
-			<div class="form-group">
+						<div class="form-group">
 			<label for="n10" > Quantidade de caixas </label>
 			<input name="n10" id="n10" type="number" class="form-control" />
 			</div>
@@ -115,16 +138,16 @@
 			<fieldset>
 			 <legend> Status do pedido de medicamentos para a farmacia </legend>
 			   <label for="sol" > Medicamento solicitado  </label>
-			   <input type="checkbox"  id="sol" />
+			   <input type="radio"  id="sol" name="status" value="1"  />
 			   <label for="ent">  Medicamento Entregue </label>
-			   <input type="checkbox"  id="ent"/>
+			   <input type="radio"  id="ent" name="status" value="2"/>
 			   
 			</fieldset>
 			</div>
 <button type="button" id="b" class="btn btn-primary"> Executar </button>
  </form>
 </main>
-<footer>Clínica Psiquiátrica! Trabalhando pela saúde da mente!  <br/> 2020! Todos os direitos reservados. </footer>
+<footer>Clínica Psiquiátrica! Trabalhando pela saúde da mente!  <br> 2020! Todos os direitos reservados. </footer>
 <!--  comentário aqui para não utilizar esse comando nesta página <p id="s" aria-live="assertive"> </p -->
 
 <!-- arquivos js importantes -->

@@ -12,7 +12,7 @@
 <header>
 <h1> Clínica Psiquiátrica! </h1>
 									<nav>
-<a href="index.html" >Home </a>
+<a href="index.php" >Home </a>
  </nav> 
  </header>
  <main>
@@ -22,16 +22,16 @@
 </p> 
 
 <p> Lembre-se de marcar a opção de "Entregue" ao Entregar o medicamento ao pacente. 
-<br/></p>
+<br /></p>
  
-<form role="search">	
+<form action="cadastrar-medicamentos.php" method="post"    role="search">	
 <div class="form-group">
 <fieldset>
  <legend> Status do pedido de medicamentos para a farmacia </legend>
-   <label for="sol" > Medicamento solicitado  </label>
-   <input type="checkbox"  id="sol" />
-   <label for="ent">  Medicamento Entregue </label>
-   <input type="checkbox"  id="ent"/>
+   <label for="solic" > Medicamento solicitado  </label>
+   <input type="radio"  id="solic" name="status" value="1" />
+   <label for="entr">  Medicamento Entregue </label>
+   <input type="radio"  id="entr" name="status" value="1" />
    
 </fieldset>
 </div>
@@ -39,21 +39,17 @@
 </form>
 
 
- <form>
+ <form action="cadastrar-medicamentos.php" method="post"   >
  <div class="form-group">
 <label for="n8" > Medicamentos da farmácia </label> 
 <select name="n8" id="n8">
-<option value="1"> Fluoxetina </option>
-<option value="2"> Bupropiona  </option>
-</select> 
-</div>
-<div class="form-group">
-<label for="n9" > Dosagem </label> 
-<select name="n9" id="n9">
-<option value="1"> 10mg </option>
-<option value="2"> 20 mg </option>
-</select> 
-</div>
+<?php 
+$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
+$medicamento = $cx->query ("select * from medicamentos order by Nome");
+while ($medicamentos = $medicamento->fetch_assoc()){
+    echo "<option value='$medicamentos[id]'>$medicamentos[Nome] </option>";
+}
+?>    
 <div class="form-group">
 <label for="n10" > Quantidade de caixas </label>
 <input name="n10" id="n10" type="number" class="form-control" />
@@ -61,11 +57,11 @@
 <div class="form-group">
 <fieldset>
  <legend> Status do pedido de medicamentos para a farmacia </legend>
-   <label for="soli" > Medicamento solicitado  </label>
-   <input type="checkbox"  id="soli" />
-   <label for="entr">  Medicamento Entregue </label>
-   <input type="checkbox"  id="entr"/>
-   
+<label for="sol" > Medicamento solicitado  </label>
+   <input type="radio"  id="sol" name="status" value="1" />
+   <label for="ent">  Medicamento Entregue </label>
+   <input type="radio"  id="ent" name="status" value="2" />
+      
 </fieldset>
 </div>
 <button type="button" id="b" class="btn btn-primary"> Executar </button>

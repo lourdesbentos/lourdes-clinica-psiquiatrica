@@ -12,7 +12,7 @@
 <header>
 <h1> Clínica Psiquiátrica! </h1>
 									<nav>
-<a href="index.html" >Home </a>
+<a href="index.php" >Home </a>
  </nav> 
  </header>
  <main>
@@ -24,49 +24,53 @@
 <p> O ccadastro dos profissionais, está sendo atualizado constantemente e contém informações essenciais. 
 <br/>Se você considerar necessário,  atualize  as informações de contato, como telefone e e-mail nesta página. </p>
  
-<form role="search">
+<form action="cadastrar-medicos.php" method="post"    role="search">
    <div class="form-group">
 <label for="c">CRM</label>
-<input type="search" name="c" id="c" >
+<input type="search" name="crm" id="c" >
 </div>
 <button type="submit" class="btn btn-primary">buscar</button>
 </form>
 
 
- <form>
+ <form action="cadastrar-medicos.php" method="post"   >
  <div class="form-group">
 <label for="n6" > CRM </label>
-<input name="n6" id="n6" type="number" required  class="form-control" />
+<input name="crm" id="n6" type="number" required  class="form-control" />
 </div>
  
 <div class="form-group">
 <label for="n1" > Nome</label>
-<input name="n1" id="n1" type="text" required  class="form-control" />
+<input name="nome" id="n1" type="text" required  class="form-control" />
 </div>
 
 <div class="form-group">
 <label for="esp" > Especialidade</label> 
-<select name="esp" id="esp">
-<option value="1"> Psiquiatria </option>
-<option value="2"> Psiquiatria Infantil </option>
-<option value="3"> Psiquiatria Geriátrica </option>
+<select name="especialidade" id="esp">
+<?php 
+$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
+$especialidade = $cx->query ("select * from médicos order by especialidade");
+while ($especialidades = $especialidade->fetch_assoc()){
+    echo "<option value='$especialidades[id]'>$especialidades[especialidade] </option>";
+}
+?>    
 </select> 
 </div>
 <div class="form-group">
 <label for="n2" > CPF </label>
-<input name="n2" id="n2" type="number" required  class="form-control" />
+<input name="cpf" id="n2" type="number" required  class="form-control" />
 </div>
 
 <div class="form-group">
 <label for="n4" > Telefone com ddd		 </label>
-<input name="n4" id="n4" type="tel" class="form-control" />
+<input name="telefone" id="n4" type="tel" class="form-control" />
 </div>
 <div class="form-group">
 <label for="n5" > E-mail</label>
-<input name="n5" id="n5" type="email" class="form-control" />
+<input name="email" id="n5" type="email" class="form-control" />
 </div>
 
-<button type="button" id="b" class="btn btn-primary"> Executar </button>
+<button type="submit" id="b" class="btn btn-primary"> Executar </button>
  </form>
 </main>
 <footer>Clínica Psiquiátrica! Trabalhando pela saúde da mente!  <br/> 2020! Todos os direitos reservados. </footer>
