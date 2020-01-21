@@ -26,8 +26,8 @@
  
 <form action="cadastrar-medicos.php" method="post"    role="search">
    <div class="form-group">
-<label for="c">CRM</label>
-<input type="search" name="crm" id="c" >
+<label for="crmpesquisa">CRM</label>
+<input type="search" name="crmpesquisa" id="crmpesquisa" >
 </div>
 <button type="submit" class="btn btn-primary">buscar</button>
 </form>
@@ -35,39 +35,40 @@
 
  <form action="cadastrar-medicos.php" method="post"   >
  <div class="form-group">
-<label for="n6" > CRM </label>
-<input name="crm" id="n6" type="number" required  class="form-control" />
+<label for="crm" > CRM </label>
+<input name="crm" id="crm" type="number" required  class="form-control" />
 </div>
  
 <div class="form-group">
-<label for="n1" > Nome</label>
-<input name="nome" id="n1" type="text" required  class="form-control" />
+<label for="nome" > Nome</label>
+<input name="nome" id="nome" type="text" required  class="form-control" />
 </div>
 
 <div class="form-group">
-<label for="esp" > Especialidade</label> 
-<select name="especialidade" id="esp">
+<label for="cpf" > CPF </label>
+<input name="cpf" id="cpf" type="number" required  class="form-control" />
+</div>
+
+<div class="form-group">
+<label for="telefone" > Telefone com ddd		 </label>
+<input name="telefone" id="telefone" type="tel" class="form-control" />
+</div>
+<div class="form-group">
+<label for="email" > E-mail</label>
+<input name="email" id="email" type="email" class="form-control" />
+</div>
+
+<div class="form-group">
+<label for="especialidade" > Especialidade</label> 
+<select name="especialidade" id="especialidade">
 <?php 
 $cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
-$especialidade = $cx->query ("select * from médicos order by especialidade");
+$especialidade = $cx->query ("select * from especialidades order by especialidades");
 while ($especialidades = $especialidade->fetch_assoc()){
-    echo "<option value='$especialidades[id]'>$especialidades[especialidade] </option>";
+    echo "<option value='$especialidades[id]'>$especialidades[especialidades] </option>";
 }
 ?>    
 </select> 
-</div>
-<div class="form-group">
-<label for="n2" > CPF </label>
-<input name="cpf" id="n2" type="number" required  class="form-control" />
-</div>
-
-<div class="form-group">
-<label for="n4" > Telefone com ddd		 </label>
-<input name="telefone" id="n4" type="tel" class="form-control" />
-</div>
-<div class="form-group">
-<label for="n5" > E-mail</label>
-<input name="email" id="n5" type="email" class="form-control" />
 </div>
 
 <button type="submit" id="b" class="btn btn-primary"> Executar </button>

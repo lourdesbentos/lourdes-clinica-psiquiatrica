@@ -26,7 +26,7 @@ Se você localizar o cadastro, atualize  as informações de contato, como telef
 <form action="cadastrar-pacientes.php" method="post"    role="search">
    <div class="form-group">
 <label for="p">pesquisa</label>
-<input type="search" name="nome" id="p" >
+<input type="search" name="nomepesquisa" id="nomepesquisa" >
 </div>
 <button type="submit" class="btn btn-primary">buscar</button>
 </form>
@@ -34,24 +34,24 @@ Se você localizar o cadastro, atualize  as informações de contato, como telef
 
  <form action="cadastrar-pacientes.php" method="post"   >
 <div class="form-group">
-<label for="n1" > Nome</label>
-<input name="nome" id="n1" type="text" required  class="form-control" />
+<label for="nome" > Nome</label>
+<input name="nome" id="nome" type="text" required  class="form-control" />
 </div>
 <div class="form-group">
-<label for="n2" > CPF </label>
-<input name="cpf" id="n2" type="number" class="form-control" />
+<label for="cpf" > CPF </label>
+<input name="cpf" id="cpf" type="number" class="form-control" />
 </div>
 <div class="form-group">
-<label for="n3" > Data de Nascimento </label>
-<input name="nascimento" id="n3" type="date" class="form-control" />
+<label for="nascimento" > Data de Nascimento </label>
+<input name="nascimento" id="nascimento" type="date" class="form-control" />
 </div>
 <div class="form-group">
-<label for="n4" > Telefone com ddd </label>
-<input name="telefone" id="n4" type="tel" class="form-control" />
+<label for="telefone" > Telefone com ddd </label>
+<input name="telefone" id="telefone" type="tel" class="form-control" />
 </div>
 <div class="form-group">
-<label for="n5" > E-mail</label>
-<input name="email" id="n5" type="email" class="form-control" />
+<label for="email" > E-mail</label>
+<input name="email" id="email" type="email" class="form-control" />
 </div>
 
 <button type="submit" id="b" class="btn btn-primary"> Executar </button>

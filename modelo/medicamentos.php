@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -28,10 +28,10 @@
 <div class="form-group">
 <fieldset>
  <legend> Status do pedido de medicamentos para a farmacia </legend>
-   <label for="solic" > Medicamento solicitado  </label>
-   <input type="radio"  id="solic" name="status" value="1" />
-   <label for="entr">  Medicamento Entregue </label>
-   <input type="radio"  id="entr" name="status" value="1" />
+   <label for="solicitadopesquisa" > Medicamento solicitado  </label>
+   <input type="radio"  id="solicitadopesquisa" name="status" value="0" />
+   <label for="entreguepesquisa">  Medicamento Entregue </label>
+   <input type="radio"  id="entreguepesquisa" name="status" value="1" />
    
 </fieldset>
 </div>
@@ -41,30 +41,29 @@
 
  <form action="cadastrar-medicamentos.php" method="post"   >
  <div class="form-group">
-<label for="n8" > Medicamentos da farmácia </label> 
-<select name="n8" id="n8">
-<?php 
-$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
-$medicamento = $cx->query ("select * from medicamentos order by Nome");
-while ($medicamentos = $medicamento->fetch_assoc()){
-    echo "<option value='$medicamentos[id]'>$medicamentos[Nome] </option>";
-}
-?>    
+<label for="nome" > Nome do Medicamento</label> 
+<input name="nome" id="nome" type="text"required autofocus class="form-control"> 
+   </div> 
 <div class="form-group">
-<label for="n10" > Quantidade de caixas </label>
-<input name="n10" id="n10" type="number" class="form-control" />
+<label for="quantidadedisponivel" > Quantidade de caixas no estoque </label>
+<input name="quantidadedisponivel" id="quantidadedisponivel" type="number" class="form-control" />
 </div>
+<div class="form-group">
+<label for="quantidadesolicitada" > Quantidade de caixas solicitadas </label>
+<input name="quantidadesolicitada" id="quantidadesolicitada" type="number" class="form-control" />
+</div>
+
 <div class="form-group">
 <fieldset>
  <legend> Status do pedido de medicamentos para a farmacia </legend>
-<label for="sol" > Medicamento solicitado  </label>
-   <input type="radio"  id="sol" name="status" value="1" />
-   <label for="ent">  Medicamento Entregue </label>
-   <input type="radio"  id="ent" name="status" value="2" />
+<label for="medicamentosolicitado" > Medicamento solicitado  </label>
+   <input type="radio"  id="medicamentosolicitado" name="status" value="0" />
+   <label for="medicamentoentregue">  Medicamento Entregue </label>
+   <input type="radio"  id="medicamentoentregue" name="status" value="1" />
       
 </fieldset>
 </div>
-<button type="button" id="b" class="btn btn-primary"> Executar </button>
+<button type="submit" id="b" class="btn btn-primary"> Executar </button>
  </form>
 </main>
 <footer>Clínica Psiquiátrica! Trabalhando pela saúde da mente!  <br/> 2020! Todos os direitos reservados. </footer>
