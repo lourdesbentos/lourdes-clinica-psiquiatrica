@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +13,12 @@
 <body>
 <header>
 <h1> Clínica Psiquiátrica! </h1>
-									<nav>
+<?php
+
+include_once 'conectar-banco.php';
+?>
+
+<nav>
 <a href="index.php" >Home </a>
  </nav> 
  </header>
@@ -46,11 +53,11 @@
 
 <div class="form-group">
 <label for="cpf" > CPF </label>
-<input name="cpf" id="cpf" type="number" required  class="form-control" />
+<input name="cpf" id="cpf" type="text" required  class="form-control" />
 </div>
 
 <div class="form-group">
-<label for="telefone" > Telefone com ddd		 </label>
+<label for="telefone" > Telefone com ddd </label>
 <input name="telefone" id="telefone" type="tel" class="form-control" />
 </div>
 <div class="form-group">
@@ -62,11 +69,9 @@
 <label for="especialidade" > Especialidade</label> 
 <select name="especialidade" id="especialidade">
 <?php 
-$cx = new mysqli ("localhost","root","","clinicapsiquiatrica");
 $especialidade = $cx->query ("select * from especialidades order by especialidades");
 while ($especialidades = $especialidade->fetch_assoc()){
-    echo "<option value='$especialidades[id]'>$especialidades[especialidades] </option>";
-}
+    echo "<option value='$especialidades[id]'> $especialidades[especialidades] </option>";}
 ?>    
 </select> 
 </div>
@@ -74,6 +79,7 @@ while ($especialidades = $especialidade->fetch_assoc()){
 <button type="submit" id="b" class="btn btn-primary"> Executar </button>
  </form>
 </main>
+
 <footer>Clínica Psiquiátrica! Trabalhando pela saúde da mente!  <br/> 2020! Todos os direitos reservados. </footer>
 <!--  comentário aqui para não utilizar esse comando nesta página <p id="s" aria-live="assertive"> </p -->
 

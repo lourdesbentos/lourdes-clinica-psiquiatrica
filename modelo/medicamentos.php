@@ -11,6 +11,10 @@
 <body>
 <header>
 <h1> Clínica Psiquiátrica! </h1>
+<?php
+include_once 'conectar-banco.php';
+
+?>
 									<nav>
 <a href="index.php" >Home </a>
  </nav> 
@@ -28,9 +32,9 @@
 <div class="form-group">
 <fieldset>
  <legend> Status do pedido de medicamentos para a farmacia </legend>
-   <label for="solicitadopesquisa" > Medicamento solicitado  </label>
+   <label for="solicitadopesquisa" > solicitado  </label>
    <input type="radio"  id="solicitadopesquisa" name="status" value="0" />
-   <label for="entreguepesquisa">  Medicamento Entregue </label>
+   <label for="entreguepesquisa">  entregue </label>
    <input type="radio"  id="entreguepesquisa" name="status" value="1" />
    
 </fieldset>
@@ -56,9 +60,9 @@
 <div class="form-group">
 <fieldset>
  <legend> Status do pedido de medicamentos para a farmacia </legend>
-<label for="medicamentosolicitado" > Medicamento solicitado  </label>
+<label for="medicamentosolicitado" > solicitado  </label>
    <input type="radio"  id="medicamentosolicitado" name="status" value="0" />
-   <label for="medicamentoentregue">  Medicamento Entregue </label>
+   <label for="medicamentoentregue">  entregue </label>
    <input type="radio"  id="medicamentoentregue" name="status" value="1" />
       
 </fieldset>
