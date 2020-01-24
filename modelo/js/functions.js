@@ -14,38 +14,36 @@ document.querySelector("#b").addEventListener("click", ()=> {mostrarLink()
 
 /*
 function mostrarCampos(){ var resultadoCampos = "";
-var opcaoCampos = document.querySelector("#med");
+var opcaoCampos = document.querySelector("#medicamentos");
 
 	if(opcaoCampos.value == 1){
 		resultadoCampos ='<div  class="form-group">
-			<label for="n8" > Medicamentos da farmácia </label> 
-			<select name="n8" id="n8">
-			<option value="1"> Fluoxetina </option>
-			<option value="2"> Bupropiona  </option>
-			</select> 
+			<label for="farmacia" > Medicamentos da farmácia </label> 
+			<select name="farmacia" id="farmacia">
+			<?php 
+$medicamento = $cx->query ("select * from medicamentos order by Nome");
+while ($medicamentos = $medicamento->fetch_assoc()){
+    echo "<option value='$medicamentos[id]' > $medicamentos[Nome] </option>";
+}
+?>    
+</select> 
 			</div>
-			<div class="form-group">
-			<label for="n9" > Dosagem </label> 
-			<select name="n9" id="n9">
-			<option value="1"> 10mg </option>
-			<option value="2"> 20 mg </option>
-			</select> 
-			</div>
-			<div class="form-group">
-			<label for="n10" > Quantidade de caixas </label>
-			<input name="n10" id="n10" type="number" class="form-control" />
+						<div class="form-group">
+			<label for="quantidadecaixas" > Quantidade de caixas </label>
+			<input name="quantidadecaixas" id="quantidadecaixas" type="number" class="form-control" />
 			</div>
 			<div class="form-group">
 			<fieldset>
 			 <legend> Status do pedido de medicamentos para a farmacia </legend>
-			   <label for="sol" > Medicamento solicitado  </label>
-			   <input type="checkbox"  id="sol" />
-			   <label for="ent">  Medicamento Entregue </label>
-			   <input type="checkbox"  id="ent"/>
+			   <label for="solicitado" > Medicamento solicitado  </label>
+			   <input type="radio"  id="solicitado" name="status" value="1"  />
+			   <label for="entregue">  Medicamento Entregue </label>
+			   <input type="radio"  id="entregue" name="status" value="2"/>
 			   
 			</fieldset>
 			</div>';} else
 		  resultadoCampos = 'Medicamentos não foram solicitados!';}
-		document.getElementById("l").innerHTML ="<div>"+resultado+"</div>";}
+		document.getElementById("l").innerHTML ="<div>"+resultadoCampos+"</div>";}
 document.querySelector("#o").addEventListener("click", ()=> {mostrarCampos()
-);});*/
+);});
+*/

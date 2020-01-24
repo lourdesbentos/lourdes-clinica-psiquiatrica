@@ -11,6 +11,10 @@
 <body>
 <header>
 <h1> Clínica Psiquiátrica! </h1>
+<?php
+include_once 'conectar-banco.php';
+
+?>
 									<nav>
 <a href="index.php" >Home </a>
  </nav> 
@@ -25,7 +29,7 @@ Se você localizar o cadastro, atualize  as informações de contato, como telef
  
 <form action="cadastrar-pacientes.php" method="post"    role="search">
    <div class="form-group">
-<label for="p">pesquisa</label>
+<label for="nomepesquisa">pesquisa</label>
 <input type="search" name="nomepesquisa" id="nomepesquisa" >
 </div>
 <button type="submit" class="btn btn-primary">buscar</button>
@@ -39,7 +43,7 @@ Se você localizar o cadastro, atualize  as informações de contato, como telef
 </div>
 <div class="form-group">
 <label for="cpf" > CPF </label>
-<input name="cpf" id="cpf" type="number" class="form-control" />
+<input name="cpf" id="cpf" type="text" class="form-control" />
 </div>
 <div class="form-group">
 <label for="nascimento" > Data de Nascimento </label>
