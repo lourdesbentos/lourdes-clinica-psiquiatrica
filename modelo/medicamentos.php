@@ -28,7 +28,7 @@ include_once 'conectar-banco.php';
 <p> Lembre-se de marcar a opção de "Entregue" ao Entregar o medicamento ao pacente. 
 <br /></p>
  
-<form action="cadastrar-medicamentos.php" method="post"    role="search">	
+<!--   <form action="cadastrar-medicamentos.php" method="post"    role="search">	
 <div class="form-group">
 <fieldset>
  <legend> Status do pedido de medicamentos para a farmacia </legend>
@@ -40,8 +40,20 @@ include_once 'conectar-banco.php';
 </fieldset>
 </div>
 <button type="submit" class="btn btn-primary">buscar</button>
-</form>
+</form> -->
 
+<h2 id="medicamentoscadastrados"> Medicamentos cadastrados : </h2>
+<ul>
+
+
+<?php 
+$medicamentos= $cx->query ("select *  from medicamentos order by Nome");
+/*busca os dados no banco */
+while ($listaMedicamentos= $medicamentos->fetch_assoc()){
+echo "<li > $listaMedicamentos[Nome]   $listaMedicamentos[quantidadedisponivel]   $listaMedicamentos[quantidadesolicitada]   $listaMedicamentos[status] </li>";
+}
+?>
+  </ul>
 
  <form action="cadastrar-medicamentos.php" method="post"   >
  <div class="form-group">

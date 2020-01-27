@@ -26,14 +26,27 @@ include_once 'conectar-banco.php';
 
 <p> Se  não localizar,  faça o cadastro corretamente, solicitando todos os dados. Entenda se ele não quiser fornecer todos para você. <br />
 Se você localizar o cadastro, atualize  as informações de contato, como telefone e e-mail.  </p> <br />
- 
-<form action="cadastrar-pacientes.php" method="post"    role="search">
+
+<h2 id="pacientescadastrados"> Pacientes cadastrados : </h2>
+<p> Verifique os pacientes cadastrados em nosso sistema.</p>
+<ul>
+
+
+<?php 
+$pacientes= $cx->query ("select *  from pacientes order by nome");
+/*busca os dados no banco */
+while ($listaPacientes= $pacientes->fetch_assoc()){
+echo "<li 'u                    n_listened'> $listaPacientes[nome]   $listaPacientes[cpf] $listaPacientes[nascimento]$listaPacientes[telefone] $listaPacientes[email]  </li>";
+}
+?>
+  </ul>
+<!--  <form action="cadastrar-pacientes.php" method="post"    role="search">
    <div class="form-group">
 <label for="nomepesquisa">pesquisa</label>
 <input type="search" name="nomepesquisa" id="nomepesquisa" >
 </div>
 <button type="submit" class="btn btn-primary">buscar</button>
-</form>
+</form>   --> 
 
 
  <form action="cadastrar-pacientes.php" method="post"   >

@@ -32,7 +32,7 @@ include_once 'conectar-banco.php';
 
  
  
-<form action="cadastrar-agendamentos.php" method="post"  role="search">
+<!--   <form action="cadastrar-agendamentos.php" method="post"  role="search">
    <div class="form-group">
 <label for="nomepesquisa">Nome do Médico </label>
 <input type="search" name="nomepesquisa" id="nomepesquisa" >
@@ -55,7 +55,19 @@ $especialidade = $cx->query ("select * from especialidades order by especialidad
 </div>
 
 <button type="submit" class="btn btn-primary">buscar</button>
-</form>
+</form> -->
+
+<h2 id="agendamentoscadastrados"> Agendamentos cadastrados : </h2>
+<ul>
+<?php 
+$agendamentos= $cx->query ("select agendamentos.data, agendamentos.horario, medicos.Nome, pacientes.nome from agendamentos inner join medicos on agendamentos.idmedicos = medicos.id inner join pacientes on agendamentos.idpacientes = pacientes.id;");
+/*busca os dados no banco */
+while ($listaAgendamentos= $agendamentos->fetch_assoc()){
+echo "<li > $listaAgendamentos[data]   $listaAgendamentos[horario]   $listaAgendamentos[Nome]   $listaAgendamentos[nome] </li>";
+}
+?>
+  </ul>
+
 
 
 <form action="cadastrar-agendamentos.php" method="post"   >
@@ -82,14 +94,14 @@ while ($pacientes = $paciente->fetch_assoc()){
 <label for="nomemedico" > Nome do Médico </label>
 <select name="nomemedico" id="nomemedico">
 <?php 
-$medico = $cx->query ("select * from medicos ord				er by Nome");
+$medico = $cx->query ("select * from medicos order by Nome");
 while ($medicos = $medico->fetch_assoc()){
     echo "<option value='$medicos[id]' > $medicos[Nome] </option>";
 }
 ?>    
 </select>
 </div>
-<div class="form-group">
+<!--   <div class="form-group">
 <label for="especialidade" > Especialidade</label> 
 <select name="especialidade" id="especialidade">
 <?php 
@@ -99,7 +111,7 @@ while ($especialidades = $especialidade->fetch_assoc()){
 }
 ?>    
 </select> 
-</div>
+</div> -->
 
 
 <button type="submit" id="b" class="btn btn-primary"> Executar </button>

@@ -31,14 +31,27 @@ include_once 'conectar-banco.php';
 <p> O ccadastro dos profissionais, está sendo atualizado constantemente e contém informações essenciais. 
 <br/>Se você considerar necessário,  atualize  as informações de contato, como telefone e e-mail nesta página. </p>
  
+<!--  
 <form action="cadastrar-medicos.php" method="post"    role="search">
    <div class="form-group">
 <label for="crmpesquisa">CRM</label>
 <input type="search" name="crmpesquisa" id="crmpesquisa" >
 </div>
 <button type="submit" class="btn btn-primary">buscar</button>
-</form>
+</form> -->
 
+<h2 id="medicoscadastrados"> Médicos cadastrados : </h2>
+<ul>
+
+
+<?php 
+$medicos= $cx->query ("select medicos.nome, medicos.crm, medicos.cpf, medicos.telefone, medicos.email, especialidades.especialidades from medicos inner join especialidades on medicos.id_especialidade = especialidades.id;");
+        /*busca os dados no banco */
+while ($listaMedicos= $medicos->fetch_assoc()){
+echo "<li > $listaMedicos[crm]   $listaMedicos[nome]   $listaMedicos[cpf]   $listaMedicos[telefone] $listaMedicos[email] $listaMedicos[especialidades]     </li>";
+}
+?>
+  </ul>
 
  <form action="cadastrar-medicos.php" method="post"   >
  <div class="form-group">

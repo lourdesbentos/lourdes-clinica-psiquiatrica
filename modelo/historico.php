@@ -30,22 +30,7 @@ include_once 'conectar-banco.php';
 <br></p>
  
 <form action="cadastrar-historico.php" method="post"   role="search">
-   <div class="form-group">
-<label for="nome">Nome do Médico </label>
-<input type="search" name="nome" id="nome" >
-</div>
-<div class="form-group">
-<label for="especialidade" > Especialidade</label> 
-<select name="especialidade" id="especialidade">
-<?php 
-$especialidade = $cx->query ("select * from especialidades order by especialidades");
-while ($especialidades = $especialidade->fetch_assoc()){
-    echo "<option value='$especialidades[id]' > $especialidades[especialidades] </option>";
-}
-?>    
-</select> 
-</div>
-
+   
 <div class="form-group">
 <label for="nomepaciente" > Nome do Paciente </label>
 <select name="nomepaciente" id="nomepaciente">
@@ -147,7 +132,7 @@ while ($medicamentos = $medicamento->fetch_assoc()){
 			</fieldset>
 			</div>
 		-->
-<button type="submet" id="b" class="btn btn-primary"> Executar </button>
+<button type="submit" id="b" class="btn btn-primary"> Executar </button>
  </form>
  <script> 
  function mostrarCampos(){ var resultadoCampos = "";
