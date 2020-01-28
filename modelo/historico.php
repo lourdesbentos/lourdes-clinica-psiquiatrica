@@ -29,7 +29,7 @@ include_once 'conectar-banco.php';
 <p> Lembre-se que este histórico será cessado por todo o corpo clínico, então, procure ser claro e objetivo no relato de suas observações / orientações / solicitações. 
 <br></p>
  
-<form action="cadastrar-historico.php" method="post"   role="search">
+<!-- <form action="cadastrar-historico.php" method="post"   role="search">
    
 <div class="form-group">
 <label for="nomepaciente" > Nome do Paciente </label>
@@ -45,7 +45,7 @@ while ($pacientes = $paciente->fetch_assoc()){
 </div>
 
 <button type="submit" class="btn btn-primary">buscar</button>
-</form>
+</form>-->
 
 
  <form action="cadastrar-historico.php" method="post"   >
@@ -66,7 +66,7 @@ while ($medicos = $medico->fetch_assoc()){
 </select> 
 </div>
 
-<div class="form-group">
+<!-- <div class="form-group">
 <label for="especialidademedico" > Especialidade</label> 
 <select name="especialidademedico" id="especialidademedico">
 <?php 
@@ -76,7 +76,7 @@ while ($especialidades = $especialidade->fetch_assoc()){
 }
 ?>    
 </select> 
-</div>
+</div>-->
 
 <div class="form-group">
 <label for="nomepaciente" > Nome do Paciente </label>
@@ -95,15 +95,14 @@ while ($pacientes = $paciente->fetch_assoc()){
 <label for="comentario" > Comentário </label>
 <textarea rows="5" cols="30"id="comentario" Name="comentario" > </textarea></div>
 
-<div class="form-group">
+<!-- <div class="form-group">
 <label for="medicamentos" > Solicitar medicamentos </label> 
 <select name="medicamentos" id="medicamentos">
 <option value="1"> sim</option>
 <option value="2"> não </option>
 </select> 
 </div>
-<button type="button" id="o" class="btn btn-primary"> OK </button>
-<!-- <div id="l" " </div>
+<button type="button" id="o" class="btn btn-primary"> OK </button> -->
 
 
 <div  class="form-group">
@@ -131,10 +130,10 @@ while ($medicamentos = $medicamento->fetch_assoc()){
 			   
 			</fieldset>
 			</div>
-		-->
+	
 <button type="submit" id="b" class="btn btn-primary"> Executar </button>
  </form>
- <script> 
+ <!-- <script> 
  function mostrarCampos(){ var resultadoCampos = "";
 var opcaoCampos = document.querySelector("#medicamentos");
 
@@ -168,7 +167,7 @@ while ($medicamentos = $medicamento->fetch_assoc()){
 		document.getElementById("l").innerHTML ="<div>"+resultadoCampos+"</div>";}
 document.querySelector("#o").addEventListener("click", ()=> {mostrarCampos()
 );});
-</script>
+</script> -->
 
 </main>
 <footer>Clínica Psiquiátrica! Trabalhando pela saúde da mente!  <br> 2020! Todos os direitos reservados. </footer>

@@ -48,7 +48,7 @@ include_once 'conectar-banco.php';
 $medicos= $cx->query ("select medicos.nome, medicos.crm, medicos.cpf, medicos.telefone, medicos.email, especialidades.especialidades from medicos inner join especialidades on medicos.id_especialidade = especialidades.id;");
         /*busca os dados no banco */
 while ($listaMedicos= $medicos->fetch_assoc()){
-echo "<li > $listaMedicos[crm]   $listaMedicos[nome]   $listaMedicos[cpf]   $listaMedicos[telefone] $listaMedicos[email] $listaMedicos[especialidades]     </li>";
+echo "<li 'un-listened' > CRM: $listaMedicos[crm];   Nome: $listaMedicos[nome];   CPF: $listaMedicos[cpf];   Telefone: $listaMedicos[telefone]; E-mail: $listaMedicos[email]; Especialidade: $listaMedicos[especialidades];     </li>";
 }
 ?>
   </ul>

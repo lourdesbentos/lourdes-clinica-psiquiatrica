@@ -63,7 +63,7 @@ $especialidade = $cx->query ("select * from especialidades order by especialidad
 $agendamentos= $cx->query ("select agendamentos.data, agendamentos.horario, medicos.Nome, pacientes.nome from agendamentos inner join medicos on agendamentos.idmedicos = medicos.id inner join pacientes on agendamentos.idpacientes = pacientes.id;");
 /*busca os dados no banco */
 while ($listaAgendamentos= $agendamentos->fetch_assoc()){
-echo "<li > $listaAgendamentos[data]   $listaAgendamentos[horario]   $listaAgendamentos[Nome]   $listaAgendamentos[nome] </li>";
+echo "<li 'un-listened' > Data da Consulta: $listaAgendamentos[data]; <br/>    Horário: $listaAgendamentos[horario]; <br/>    Nome do Médico: $listaAgendamentos[Nome]; <br/>   Nome do Paciente: $listaAgendamentos[nome];  </li>";
 }
 ?>
   </ul>

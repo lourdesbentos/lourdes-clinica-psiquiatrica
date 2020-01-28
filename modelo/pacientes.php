@@ -36,7 +36,8 @@ Se você localizar o cadastro, atualize  as informações de contato, como telef
 $pacientes= $cx->query ("select *  from pacientes order by nome");
 /*busca os dados no banco */
 while ($listaPacientes= $pacientes->fetch_assoc()){
-echo "<li 'u                    n_listened'> $listaPacientes[nome]   $listaPacientes[cpf] $listaPacientes[nascimento]$listaPacientes[telefone] $listaPacientes[email]  </li>";
+    echo "<li 'un-listened' > Nome: $listaPacientes[nome]; <br/> CPF: $listaPacientes[cpf]; <br/>  Data de Nascimento: $listaPacientes[nascimento]; </br>  Telefone: $listaPacientes[telefone]; </br>  E-mail:$listaPacientes[email];  </li>";
+    
 }
 ?>
   </ul>

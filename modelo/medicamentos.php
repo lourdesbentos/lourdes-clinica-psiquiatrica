@@ -50,7 +50,7 @@ include_once 'conectar-banco.php';
 $medicamentos= $cx->query ("select *  from medicamentos order by Nome");
 /*busca os dados no banco */
 while ($listaMedicamentos= $medicamentos->fetch_assoc()){
-echo "<li > $listaMedicamentos[Nome]   $listaMedicamentos[quantidadedisponivel]   $listaMedicamentos[quantidadesolicitada]   $listaMedicamentos[status] </li>";
+echo "<li 'un-listened' > Medicamento: $listaMedicamentos[Nome]; <br/>    Quantidade Disponível: $listaMedicamentos[quantidadedisponivel]; <br/>    Quantidade Solicitada: $listaMedicamentos[quantidadesolicitada]; <br/>    Status do Pedido: $listaMedicamentos[status];  </li>";
 }
 ?>
   </ul>
